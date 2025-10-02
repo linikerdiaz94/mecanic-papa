@@ -1,0 +1,175 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+/* ===== Menú ===== */
+nav {
+  background: #444;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* ===== Banner (solo para index.html) ===== */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url("imagenesss/mecanico1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.banner-texto h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.banner-texto p {
+  font-size: 1.5em;
+}
+
+/* ===== Contenido principal ===== */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+main p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+/* ===== Formulario de contacto ===== */
+.form-contacto {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-contacto label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.form-contacto textarea {
+  resize: vertical;
+}
+
+.form-contacto button {
+  margin-top: 20px;
+  background: #ffcc00;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.form-contacto button:hover {
+  background: #e6b800;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* ===== Imagen centrada (sobre-nosotros.html) ===== */
+.imagen-centrada {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.imagen-centrada img {
+  max-width: 80%;
+  height: auto;
+  border: 3px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .banner {
+    height: 300px;
+  }
+  .banner-texto h2 {
+    font-size: 2em;
+  }
+  .banner-texto p {
+    font-size: 1em;
+  }
+  .form-contacto {
+    width: 90%;
+  }
+}

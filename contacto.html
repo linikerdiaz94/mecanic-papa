@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contacto - Taller Mecánico El Rápido</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <h1>📩 Contáctanos</h1>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="sobre nosotros.html">Sobre Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+      <h2>Envíanos un mensaje</h2>
+      <p>
+        Completa el formulario y nos pondremos en contacto contigo lo antes
+        posible.
+      </p>
+
+      <!-- Formulario funcional con Formspree -->
+      <form
+        class="form-contacto"
+        action="https://formspree.io/f/mvgwrwve"
+        method="POST"
+      >
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="name"
+          placeholder="Tu nombre"
+          required
+        />
+
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="tu@correo.com"
+          required
+        />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          name="message"
+          rows="5"
+          placeholder="Escribe tu mensaje..."
+          required
+        ></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- Mensaje de agradecimiento al enviar (opcional) -->
+      <div
+        id="mensaje-gracias"
+        style="display: none; text-align: center; margin-top: 20px"
+      >
+        <h3>¡Gracias por contactarnos!</h3>
+        <p>Nos pondremos en contacto contigo pronto.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Taller Mecánico El Rápido</p>
+    </footer>
+
+    <!-- Script para mostrar mensaje de agradecimiento -->
+    <script>
+      const form = document.querySelector(".form-contacto");
+      const mensajeGracias = document.getElementById("mensaje-gracias");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // evita recargar la página
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.style.display = "none";
+              mensajeGracias.style.display = "block";
+            } else {
+              alert(
+                "Hubo un error al enviar el formulario. Intenta nuevamente."
+              );
+            }
+          })
+          .catch((error) => {
+            alert("Hubo un error al enviar el formulario. Intenta nuevamente.");
+          });
+      });
+    </script>
+  </body>
+</html>
